@@ -13,9 +13,6 @@ export default defineConfig({
     sourcemap: true,
     outDir: resolve(__dirname, './dist'),
     rollupOptions: {
-      input: {
-        foo: resolve(__dirname, './src/main.ts'),
-      },
       output: [
         {
           assetFileNames: "[name]/main.[ext]",
@@ -28,9 +25,10 @@ export default defineConfig({
   plugins: [
     svelte(),
     djangoVitePlugin({
-      input: [
-        './src/main.ts',
-      ],
+      input:{
+        // @ts-expect-error Record<string, string> is not supported yet
+        foo: resolve(__dirname, './src/main.ts'),
+      },
       root: resolve(__dirname, '../dvptestproject'),
     })
   ],
