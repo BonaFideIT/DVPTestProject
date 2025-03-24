@@ -1,5 +1,7 @@
 # Test Project for Django Vite Plugin
 
+[Django Vite Plugin](https://github.com/protibimbok/django-vite-plugin)
+
 ## Installation
 
 1. [install uv](https://docs.astral.sh/uv/getting-started/installation/).
