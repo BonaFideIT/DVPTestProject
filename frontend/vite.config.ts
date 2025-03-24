@@ -13,13 +13,11 @@ export default defineConfig({
     sourcemap: true,
     outDir: resolve(__dirname, './dist'),
     rollupOptions: {
-      output: [
-        {
-          assetFileNames: "[name]/main.[ext]",
-          chunkFileNames: "[name]/main.js",
-          entryFileNames: "[name]/main.js",
-        }
-      ]
+      output: {
+        assetFileNames: "[name]/main.[ext]",
+        chunkFileNames: "[name]/main.js",
+        entryFileNames: "[name]/main.js",
+      }
     }
   },
   plugins: [
