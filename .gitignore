@@ -11,3 +11,4 @@ db.sqlite3
 frontend/dist/
 frontend/env/
 frontend/node_modules/
+.hotfile
