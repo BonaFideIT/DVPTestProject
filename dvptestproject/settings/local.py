@@ -5,6 +5,8 @@ from pathlib import Path
 SETTINGS_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SETTINGS_DIR.parent
 BASE_DIR = PROJECT_DIR.parent
+APPS_DIR = BASE_DIR / "apps"
+sys.path.insert(0, str(APPS_DIR))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -19,7 +21,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_vite_plugin",
+    "foo",
 ]
 
 MIDDLEWARE = [
@@ -64,7 +66,6 @@ ASGI_APPLICATION = "dvptestproject.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -75,7 +76,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -94,13 +94,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -121,7 +117,14 @@ DJANGO_VITE_PLUGIN = {
 }
 sys.path.insert(0, str(BASE_DIR))
 
+
+# Media files (Uploaded files)
+# https://docs.djangoproject.com/en/4.2/topics/files/
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
