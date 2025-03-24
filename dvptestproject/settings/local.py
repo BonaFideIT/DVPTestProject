@@ -6,6 +6,7 @@ SETTINGS_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SETTINGS_DIR.parent
 BASE_DIR = PROJECT_DIR.parent
 APPS_DIR = BASE_DIR / "apps"
+sys.path.insert(0, str(BASE_DIR))
 sys.path.insert(0, str(APPS_DIR))
 
 # Quick-start development settings - unsuitable for production
@@ -115,7 +116,6 @@ DJANGO_VITE_PLUGIN = {
     "BUILD_DIR": DJANGO_VITE_STATIC_ROOT,
     'STATIC_LOOKUP': False,
 }
-sys.path.insert(0, str(BASE_DIR))
 
 
 # Media files (Uploaded files)
