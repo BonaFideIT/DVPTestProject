@@ -22,7 +22,6 @@
     ```
 4. run vite dev server:
     ```shell
-    source .venv/bin/activate
     cd frontend
     source env/bin/activate
     npm run dev
